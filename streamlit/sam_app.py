@@ -108,7 +108,7 @@ else:
 def create():
     audience_id = str(hash(audience_name))[-9:]
     
-    if audience_type == "audience" or audience_type == "suppression":
+    if audience_type == "audience" or audience_type == "suppression list":
         result = session.call("code_schema.update_audience",audience_type[0].upper()+audience_id,audience_name,update_frequency,advertiser_sql,id_col)
     else:
         # TODO: create lookalike udtf
